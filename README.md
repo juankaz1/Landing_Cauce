@@ -19,19 +19,6 @@ Landing Cauce/
 └── README.md           # Este archivo
 ```
 
-## Requisitos
-
-Para que la página funcione correctamente, necesitas:
-
-1. Añadir las imágenes en los directorios correspondientes:
-   - `images/carousel/`: 25 imágenes numeradas del 1 al 25 (ej: 1.jpg, 2.jpg, etc.)
-   - `images/behind-scenes/`: 11 imágenes numeradas del 1 al 11 (ej: 1.jpg, 2.jpg, etc.)
-   - `images/logos/`: 12 logos de clientes (ej: logo1.png, logo2.png, etc. hasta logo12.png)
-   - `images/logo_cauce/`: El icono del sitio (icono.png)
-   - `images/logo_horizontal/`: Logo horizontal (logo_horizontal.png) y versión blanca (logo_blanco.png)
-   - `images/background/`: Fondos para las secciones (b1.jpg, b2.jpg, b3.jpg, b4.jpg)
-
-2. Añadir el video del reel en la raíz del proyecto con el nombre `reel.mp4`
 
 ## Características
 
@@ -45,10 +32,9 @@ Para que la página funcione correctamente, necesitas:
 
 ### Snap Scrolling
 
-La página implementa snap scrolling, lo que permite una navegación fluida entre secciones. Cada sección se ajusta automáticamente a la pantalla al desplazarse. Características:
+Cada sección se ajusta automáticamente a la pantalla al desplazarse de forma reactiva. Características:
 
 - Navegación suave entre secciones
-- Indicadores de desplazamiento en cada sección
 - Control mediante:
   - Rueda del ratón
   - Teclas de dirección (arriba/abajo)
