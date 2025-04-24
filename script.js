@@ -266,19 +266,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Cargar imágenes para el carrusel de detrás de cámara
+    // Crear un array con todas las imágenes
     const behindScenesWrapper = document.querySelector('.behind-scenes-carousel .swiper-wrapper');
     behindScenesWrapper.innerHTML = ''; // Limpiar cualquier contenido existente
-    
-    // Crear un array con todas las imágenes
+
+    // Crear un array con todas las imágenes y sus extensiones correctas
     const behindScenesPaths = [];
-    for (let i = 1; i <= 11; i++) {
-        // Omitir la imagen 10 (penúltima)
-        if (i !== 10) {
-            behindScenesPaths.push(`images/behind-scenes/${i}.jpg`);
-        }
+    for (let i = 1; i <= 10; i++) {
+        // Determinar la extensión correcta según el número de imagen
+        const extension = [1, 6, 7, 8, 9, 10].includes(i) ? '.JPG' : '.jpg';
+        behindScenesPaths.push(`images/behind-scenes/${i}${extension}`);
     }
-    
+
     // Agregar todas las imágenes al carrusel
     let loadedImagesCount = 0;
     behindScenesPaths.forEach((path, index) => {
@@ -302,6 +301,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 behindScenesCarousel.slideNext(1);
                 behindScenesCarousel.slidePrev(1);
             }
+        };
+        
+        // Manejar errores de carga
+        img.onerror = function() {
+            console.error(`Error al cargar la imagen: ${path}`);
         };
         
         // Agregar evento de clic para ampliar la imagen
