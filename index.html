@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Cauce - Producción de Narrativas Transmedia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Manwards';
+            src: url('manwards.regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación -->
+    <header>
+        <nav>
+            <div class="logo"><a href="#inicio"></a></div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu">
+                <a href="#reel">Reel</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#detras-camara">Detrás de Cámara</a>
+                <a href="#aliados">Aliados Creativos</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Carrusel Principal -->
+    <section id="inicio" class="section">
+        <div class="swiper-container main-carousel">
+            <div class="swiper-wrapper">
+                <!-- Se cargarán 25 imágenes dinámicamente con JavaScript -->
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <!-- Reel -->
+    <section id="reel" class="section">
+        <div class="container">
+            <div class="video-container">
+                <iframe 
+                    width="100%" 
+                    height="550" 
+                    src="https://www.youtube.com/embed/q9YPIEIo-7A?si=-oSMpXdzLXNkeSs5" 
+                    title="Reel de El Cauce" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios (Movido antes de Nosotros) -->
+    <section id="servicios" class="section">
+        <div class="container">
+            <h2>NUESTROS SERVICIOS</h2>
+            <div class="services-container">
+                <!-- Categoría 1: Producción Audiovisual -->
+                <div class="service-category">
+                    <div class="category-box" id="audiovisual">
+                        <h3>PRODUCCIÓN AUDIOVISUAL</h3>
+                        <div class="category-description">
+                            <p>Generamos piezas de alta calidad conceptual, narrativa y técnica, cuya producción se basa en los objetivos que planteamos con nuestros colaboradores y clientes. Nuestro trabajo audiovisual se basa en la creación de piezas documentales, de ficción, de promoción comercial, o corporativas, y nos interesa, sobre todo, entender la porosidad de estas categorías para crear contenidos que traspasen estas limitaciones genéricas y encuentren sus propios lenguajes cinematográficos.</p>
+                        </div>
+                    </div>
+                    <div class="service-items">
+                        <div class="service-item" data-service="corporativa">
+                            <h4>Producción corporativa e institucional</h4>
+                        </div>
+                        <div class="service-item" data-service="desarrollo">
+                            <h4>Desarrollo integral de proyectos audiovisuales</h4>
+                        </div>
+                        <div class="service-item" data-service="documentales">
+                            <h4>Documentales</h4>
+                        </div>
+                        <div class="service-item" data-service="videoclips">
+                            <h4>Videoclips</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categoría 2: Producción de Video Podcast -->
+                <div class="service-category">
+                    <div class="category-box" id="podcast">
+                        <h3>PRODUCCIÓN DE VIDEO PODCAST</h3>
+                        <div class="category-description">
+                            <p>Transformamos ideas en experiencias audiovisuales envolventes, brindando a empresas, instituciones y ONGs un servicio de producción de video podcast adaptado a diversas necesidades. Este servicio está pensado para proyectos de comunicación, en el ámbito cultural, empresarial, social o publicitario.</p>
+                        </div>
+                    </div>
+                    <div class="service-items">
+                        <div class="service-item" data-service="podcast-corporativo">
+                            <h4>Producción de video podcast corporativos e institucionales</h4>
+                        </div>
+                        <div class="service-item" data-service="podcast-educativo">
+                            <h4>Video Podcast Educativo y Pedagógico</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nosotros (Movido después de Servicios) -->
+    <section id="nosotros" class="section">
+        <div class="container">
+            <h2>NOSOTROS</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>El Cauce es una empresa dedicada a la producción de narrativas transmedia en formatos audiovisuales y de podcast. Apoyamos a empresas, instituciones públicas, ONGs y creadores de contenido a comunicar de manera creativa y efectiva su visión. Nuestro trabajo apunta hacia la construcción de futuros ambiental y socialmente sostenibles a partir de la narrativa, la imagen y el sonido.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detrás de Cámara -->
+    <section id="detras-camara" class="section">
+        <div class="container">
+            <h2>DETRÁS DE CÁMARA</h2>
+            <div class="swiper-container behind-scenes-carousel">
+                <div class="swiper-wrapper">
+                    <!-- Se cargarán 11 imágenes dinámicamente con JavaScript -->
+                </div>
+                <div class="swiper-pagination behind-scenes-pagination"></div>
+                <div class="swiper-button-next behind-scenes-next"></div>
+                <div class="swiper-button-prev behind-scenes-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aliados Creativos en Grilla -->
+    <section id="aliados" class="section">
+        <div class="container">
+            <div class="partners-container">
+                <div class="partners-column">
+                    <h3>CLIENTES</h3>
+                    <div class="client-logos-grid">
+                        <!-- Se cargarán los logos de clientes dinámicamente con JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="partners-column">
+                    <h3>ALIADOS</h3>
+                    <div class="allies-logos-grid">
+                        <!-- Se cargarán los logos de aliados dinámicamente con JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="section">
+        <div class="container">
+            <h2>CONTACTO</h2>
+            <div class="footer-logo"></div>
+            <div class="contact-info">
+                <div class="social-buttons">
+                    <a href="https://wa.me/573136635399" class="social-btn" target="_blank">
+                        <img src="images/whatsapp.png" alt="WhatsApp">
+                    </a>
+                    <a href="https://www.instagram.com/elcauce.co/" class="social-btn" target="_blank">
+                        <img src="images/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="mailto:gerencia@cixgroup.lat" class="social-btn">
+                        <img src="images/email.png" alt="Email">
+                    </a>
+                    <a href="https://www.linkedin.com/company/el-cauce-s-a-s/" class="social-btn" target="_blank">
+                        <img src="images/linkedin.png" alt="LinkedIn">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para servicios -->
+    <div class="modal" id="serviceModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalTitle"></div>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- Modal para imágenes -->
+    <div class="modal" id="imageModal">
+        <span class="close-image-modal">&times;</span>
+        <img class="modal-image-content" id="modalImage">
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>Contacto: <a href="tel:+573136635399">+57 313 663 5399</a></div>
+            <div><a href="mailto:gerencia@cixgroup.lat">gerencia@cixgroup.lat</a></div>
+            <div>Bogotá, Colombia 2025</div>
+        </div>
+    </footer>
+</body>
+</html> 
