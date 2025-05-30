@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
             section.style.backgroundImage = `url('images/background/b3.jpg')`;
             section.style.backgroundSize = 'cover';
             section.style.backgroundPosition = 'center';
-        } else if (section.id === 'aliados') {
-            // Sección de aliados con fondo similar al navbar
+        } else if (section.id === 'aliados' || section.id === 'por-que-nosotros') {
+            // Sección de aliados y "por qué trabajar con nosotros" con fondo similar al navbar
             section.style.backgroundImage = `url('images/background/b2.jpg')`;
             section.style.backgroundSize = 'cover';
             section.style.backgroundPosition = 'center';
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
         slidesPerView: 'auto', // Ajuste automático según el tamaño de pantalla
         spaceBetween: 20,
         loop: true,
-        loopedSlides: 24, // Total de slides que se mostrarán en el loop
+        loopedSlides: 13, // Actualizado de 24 a 13 imágenes
         autoplay: {
             delay: 5000,
             disableOnInteraction: false,
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
             slideShadows: false,
         },
         centeredSlides: true,
-        initialSlide: 2, // Empezar desde la tercera imagen para ver correctamente la izquierda
+        initialSlide: 1, // Actualizado a 1 (segunda imagen) para adaptarse al nuevo conjunto de imágenes
         observer: true, // Observar cambios en los elementos hijo
         observeParents: true, // Observar cambios en los elementos padre
         touchEventsTarget: 'container', // Mejorar la detección de eventos táctiles
@@ -120,11 +120,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainCarouselWrapper = document.querySelector('.main-carousel .swiper-wrapper');
     mainCarouselWrapper.innerHTML = ''; // Limpiar cualquier contenido existente
     
-    // Crear un array con todas las imágenes (de 2 a 25)
-    const imagePaths = [];
-    for (let i = 2; i <= 25; i++) {
-        imagePaths.push(`images/carousel/${i}.jpg`);
-    }
+    // Crear un array con todas las imágenes disponibles después de las eliminaciones
+    const imagePaths = [
+        'images/carousel/2.jpg',
+        'images/carousel/3.jpg',
+        'images/carousel/5.jpg',
+        'images/carousel/6.jpeg',
+        'images/carousel/9.jpg',
+        'images/carousel/14.jpg',
+        'images/carousel/15.jpg',
+        'images/carousel/17.jpg',
+        'images/carousel/18.jpg',
+        'images/carousel/21.jpg',
+        'images/carousel/22.jpg',
+        'images/carousel/24.jpg',
+        'images/carousel/25.jpg'
+    ];
     
     let allMainImagesLoaded = false;
     
@@ -136,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const img = document.createElement('img');
         img.src = path;
-        img.alt = `Imagen ${index + 2}`;
+        img.alt = `Imagen ${index + 1}`; // Actualizar el alt para que sea secuencial
         img.loading = 'eager'; // Cargar imágenes ávidamente para mejorar la experiencia
         
         // Contar imágenes cargadas
@@ -428,31 +439,63 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Datos de servicios
     const serviceData = {
-        'corporativa': {
-            title: 'Producción corporativa e institucional',
+        'podcast-corporativo': {
+            title: 'Podcast para Empresas y Audiencias Digitales',
             content: `
-                <p>Creamos contenido audiovisual diseñado para fortalecer la identidad y el mensaje de directoras/res, agencias de publicidad, marcas, empresas, instituciones y organizaciones sin ánimo de lucro. A través de una combinación de narrativa visual, estética y estructura comunicativa, ayudamos a transmitir valores, impacto y objetivos estratégicos de manera efectiva.</p>
-                <h4>Formatos:</h4>
+                <p>Transformamos ideas en experiencias audiovisuales envolventes, brindando a empresas y canales de entretenimiento un servicio de producción de video podcast adaptado a diversas necesidades. Este servicio está pensado para proyectos de comunicación, en el ámbito cultural, empresarial o publicitario.</p>
+                <h4>Lo que ofrecemos:</h4>
                 <ul>
-                    <li>Videos institucionales.</li>
-                    <li>Campañas de sensibilización y comunicación.</li>
-                    <li>Contenidos para divulgación de proyectos sociales y ambientales.</li>
-                    <li>Registros de eventos, conferencias y actividades de impacto.</li>
+                    <li>Desarrollo integral: Acompañamiento en la creación del concepto, narrativa, estética y dirección artística del podcast.</li>
+                    <li>Producción técnica: Grabación y postproducción audiovisual sin intervención en la concepción del contenido.</li>
+                </ul>
+                <h4>Dirigido a:</h4>
+                <ul>
+                    <li>Empresas y marcas que buscan conectar con su audiencia a través del podcasting.</li>
+                    <li>Productoras de contenido interesadas en formatos audiovisuales de alta calidad.</li>
+                    <li>Organizaciones y emprendimientos que quieran fortalecer sus estrategias de comunicación digital y storytelling.</li>
+                    <li>Organizaciones del sector cultural que desean robustecer su presencia digital.</li>
+                </ul>
+            `
+        },
+        'podcast-educativo': {
+            title: 'Podcast para aprender y compartir',
+            content: `
+                <p>Un espacio diseñado para instituciones y centros educativos que buscan potenciar la enseñanza a través de formatos innovadores. Este servicio está dirigido a universidades, colegios, academias y empresas con programas de formación que desean transformar la educación en una experiencia envolvente y dinámica.</p>
+                <h4>Lo que ofrecemos:</h4>
+                <div class="podcast-features-grid">
+                    <div class="logo-item">
+                        <p>Producción de video podcast educativo con narrativas audiovisuales.</p>
+                    </div>
+                    <div class="logo-item">
+                        <p>Integración de recursos visuales: animaciones 3D y 2D, ilustraciones y gráficos informativos.</p>
+                    </div>
+                    <div class="logo-item">
+                        <p>Formato adaptado a clases magistrales, cursos de especialización, maestrías y capacitaciones corporativas.</p>
+                    </div>
+                    <div class="logo-item">
+                        <p>Aprendizaje remoto y distribución de conocimientos en formatos accesibles y envolventes.</p>
+                    </div>
+                </div>
+                <h4>Dirigido a:</h4>
+                <ul>
+                    <li>Universidades y colegios privados.</li>
+                    <li>Empresas con programas de formación interna.</li>
+                    <li>Instituciones educativas y centros de innovación pedagógica.</li>
+                    <li>Cajas de compensación y programas de formación técnica.</li>
                 </ul>
             `
         },
         'desarrollo': {
             title: 'Desarrollo integral de proyectos audiovisuales',
             content: `
-                <p>Para proyectos de mayor envergadura, ofrecemos un servicio completo que abarca la planificación, ejecución y dirección técnica de producciones audiovisuales. Podemos gestionar el proyecto de manera integral o encargarnos de cualquiera de sus fases de manera independiente, según las necesidades de cada cliente.</p>
+                <p>Para proyectos de mayor envergadura, ofrecemos un servicio completo que abarca la planificación, ejecución y dirección creativa y técnica de producciones audiovisuales. Podemos gestionar el proyecto de manera integral o encargarnos de cualquiera de sus fases de manera independiente, según las necesidades de cada cliente.</p>
                 <h4>Incluye:</h4>
                 <ul>
-                    <li>Preproducción: escritura de proyectos, guiones, presupuestos y cronogramas.</li>
+                    <li>Preproducción y creación narrativa: escritura de proyecto/biblia, guiones, presupuestos y cronogramas.</li>
                     <li>Scouting técnico y logístico: exploración de locaciones y análisis de viabilidad técnica.</li>
                     <li>Fotografía fija profesional: documentación del proceso audiovisual.</li>
-                    <li>Ejecución y manejo técnico: operación de equipos de filmación, iluminación y sonido.</li>
+                    <li>Ejecución y manejo técnico: operación de equipos de filmación, maquinismo, iluminación y sonido.</li>
                     <li>Coordinación y dirección de producción: supervisión en campo y optimización de recursos audiovisuales.</li>
-                    <li>Postproducción y edición profesional: realizamos la edición, corrección de color, mezcla y diseño sonoro para entregar un producto final de alta calidad.</li>
                 </ul>
                 <p><em>*Servicios modulares: posibilidad de contratar cada fase del proceso de manera independiente: preproducción, producción o postproducción.</em></p>
             `
@@ -460,77 +503,13 @@ document.addEventListener('DOMContentLoaded', function() {
         'documentales': {
             title: 'Documentales',
             content: `
-                <p>Realización de cortometrajes documentales cinematográficos para fundaciones, entidades públicas, universidades, productoras audiovisuales y artistas. Exploramos temáticas sociales, ambientales y culturales con una mirada estética y narrativa propia.</p>
-                <h4>Incluye:</h4>
-                <ul>
-                    <li>Investigación.</li>
-                    <li>Escritura de guion.</li>
-                    <li>Dirección.</li>
-                    <li>Dirección de fotografía y operación de cámara.</li>
-                    <li>Sonido directo.</li>
-                    <li>Producción y producción de campo.</li>
-                    <li>Postproducción de imagen y audio.</li>
-                    <li>Títulos y animaciones.</li>
-                </ul>
+                <p>Realización de documentales cinematográficos de corta y larga duración para fundaciones, entidades públicas, universidades, productoras audiovisuales y artistas. Exploramos temáticas sociales, ambientales y culturales con una mirada estética y narrativa que busca corresponder de manera empática y dialógica con diferentes realidades.</p>
             `
         },
         'videoclips': {
             title: 'Videoclips',
             content: `
                 <p>Producción de videoclips musicales diseñados para artistas que buscan expandir el universo narrativo de sus obras a través de una identidad visual impactante y auténtica.</p>
-                <h4>Incluye:</h4>
-                <ul>
-                    <li>Dirección creativa.</li>
-                    <li>Escritura de guion literario y técnico.</li>
-                    <li>Producción de campo.</li>
-                    <li>Dirección de fotografía e iluminación.</li>
-                    <li>Postproducción (montaje, corrección de color, finalizado).</li>
-                    <li>Dirección de arte.</li>
-                </ul>
-            `
-        },
-        'podcast-corporativo': {
-            title: 'Producción de video podcast corporativos e institucionales',
-            content: `
-                <p>Transformamos ideas en experiencias audiovisuales envolventes, brindando a empresas, instituciones y ONGs un servicio de producción de video podcast adaptado a diversas necesidades. Este servicio está pensado para proyectos de comunicación, en el ámbito cultural, empresarial, social o publicitario.</p>
-                <h4>Lo que ofrecemos:</h4>
-                <ul>
-                    <li>Desarrollo integral: Acompañamiento en la creación del concepto, narrativa, estética y dirección artística del podcast, así como en distribución y monetización</li>
-                    <li>Producción técnica: Grabación y postproducción audiovisual sin intervención en la concepción del contenido.</li>
-                </ul>
-                <h4>Incluye:</h4>
-                <ul>
-                    <li>Grabación con dos o tres cámaras (o más, según la necesidad del cliente)</li>
-                    <li>Grabación de sonido de alta calidad</li>
-                    <li>Grabación de video de alta calidad</li>
-                    <li>Diseño y equipos de iluminación profesional</li>
-                    <li>Postproducción audiovisual (conformado, montaje, etalonaje, finalización).</li>
-                    <li>Postproducción de audio (edición y mezcla).</li>
-                    <li>Animaciones y gráficos para complementar los contenidos en caso de que se requiera.</li>
-                </ul>
-            `
-        },
-        'podcast-educativo': {
-            title: 'Video Podcast Educativo y Pedagógico',
-            content: `
-                <p>Un espacio diseñado para instituciones y centros educativos que buscan potenciar la enseñanza a través de formatos innovadores. Este servicio está dirigido a universidades, colegios, academias y empresas con programas de formación que desean transformar la educación en una experiencia envolvente y dinámica.</p>
-                <h4>Lo que ofrecemos:</h4>
-                <ul>
-                    <li>Producción de video podcast educativo con narrativas audiovisuales.</li>
-                    <li>Integración de recursos visuales: animaciones 3D y 2D, ilustraciones y gráficos informativos.</li>
-                    <li>Formato adaptado a clases magistrales, cursos de especialización, maestrías y capacitaciones corporativas.</li>
-                    <li>Aprendizaje remoto y distribución de conocimientos en formatos accesibles y envolventes.</li>
-                </ul>
-                <h4>Incluye:</h4>
-                <ul>
-                    <li>Grabación con dos o tres cámaras (o más, según la necesidad del cliente)</li>
-                    <li>Grabación de sonido de alta calidad</li>
-                    <li>Grabación de vídeo de alta calidad</li>
-                    <li>Diseño y equipos de iluminación profesional</li>
-                    <li>Postproducción audiovisual (conformado, montaje, etalonaje, finalización).</li>
-                    <li>Postproducción de audio (edición y mezcla).</li>
-                    <li>Animaciones y gráficos para complementar los contenidos en caso de que se requiera.</li>
-                </ul>
             `
         }
     };

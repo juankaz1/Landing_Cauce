@@ -1775,4 +1775,176 @@ footer a:hover {
 .swiper-pagination-bullet {
     pointer-events: auto !important;
     cursor: pointer !important;
+}
+
+/* Estilo para la sección "Por qué trabajar con nosotros" */
+#por-que-nosotros {
+    background-image: url('images/background/b2.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 70vh; /* Reducir la altura vertical de la sección */
+    padding: 40px 0; /* Reducir el padding vertical */
+}
+
+#por-que-nosotros::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+    backdrop-filter: brightness(1.3);
+}
+
+.why-logos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+#por-que-nosotros .logo-item {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 180px !important; /* Aumentado un 20% de 150px */
+    min-height: 180px; /* Aumentado un 20% de 150px */
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Transición para fondo */
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    border: 2px solid transparent; /* Borde transparente para mantener tamaño consistente */
+}
+
+#por-que-nosotros .logo-item p {
+    color: #1c2227;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+    transition: color 0.3s; /* Agregar transición para el color del texto */
+}
+
+#por-que-nosotros .logo-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    background-color: #BA815B; /* Cambiar el fondo al color café */
+    border: 2px solid transparent; /* Quitar el borde coloreado */
+}
+
+#por-que-nosotros .logo-item:hover p {
+    color: #ffffff; /* Cambiar el texto a blanco para mejor contraste sobre fondo café */
+}
+
+@media (max-width: 992px) {
+    .why-logos-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #por-que-nosotros {
+        min-height: 60vh;
+        padding: 30px 0;
+    }
+    
+    .why-logos-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+    
+    #por-que-nosotros .logo-item {
+        height: 156px !important; /* Aumentado un 20% de 130px */
+        min-height: 156px; /* Aumentado un 20% de 130px */
+    }
+    
+    #por-que-nosotros .logo-item p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #por-que-nosotros {
+        min-height: auto;
+        padding: 25px 0;
+    }
+    
+    .why-logos-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    #por-que-nosotros .logo-item {
+        height: 144px !important; /* Aumentado un 20% de 120px */
+        min-height: 144px; /* Aumentado un 20% de 120px */
+        padding: 15px;
+    }
+    
+    #por-que-nosotros .logo-item p {
+        font-size: 0.9rem;
+    }
+}
+
+#por-que-nosotros h2 {
+    margin-bottom: 15px; /* Reducir el espacio entre el título y las tarjetas */
+}
+
+#por-que-nosotros .partners-container {
+    gap: 20px; /* Reducir el espacio entre elementos */
+    margin-top: 10px; /* Reducir el espacio superior */
+}
+
+/* Estilos para la grilla de podcast educativo */
+.podcast-features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.podcast-features-grid .logo-item {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px !important;
+    min-height: 150px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+}
+
+.podcast-features-grid .logo-item p {
+    color: #1c2227;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.podcast-features-grid .logo-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    background-color: #BA815B;
+}
+
+.podcast-features-grid .logo-item:hover p {
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .podcast-features-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .podcast-features-grid .logo-item {
+        height: 130px !important;
+        min-height: 130px;
+    }
 } 
